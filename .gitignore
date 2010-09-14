@@ -1,0 +1,5 @@
+/lib_mysqludf_skeleton
+/.cproject
+/.project
+/build
+/lib_mysqludf_ssdeep.so

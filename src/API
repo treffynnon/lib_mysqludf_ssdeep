@@ -1,0 +1,3 @@
+
+lib_mysqludf_ssdeep_info()
+	Output the library version.
