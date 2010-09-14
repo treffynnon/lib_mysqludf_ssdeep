@@ -1,7 +1,7 @@
 lib_LTLIBRARIES = lib_mysqludf_ssdeep.la
 lib_mysqludf_ssdeep_la_SOURCES = lib_mysqludf_ssdeep.cc mysqludf.cc
 lib_mysqludf_ssdeep_la_CXXFLAGS = -DSTANDARD -DMYSQL_SERVER @MYSQL_CFLAGS@
-lib_mysqludf_ssdeep_la_LDFLAGS = -module -avoid-version -no-undefined -rpath @MYSQL_PLUGINDIR@
+lib_mysqludf_ssdeep_la_LDFLAGS = -module -avoid-version -no-undefined -rpath @MYSQL_PLUGINDIR@ @SSDEEP_LIBDIR@ @SSDEEP_LIBS@
 
 EXTRA_DIST = *.h test *.sql API
 

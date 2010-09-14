@@ -20,6 +20,9 @@ if test -n "$MYSQL_PLUGINDIR" && test "$libdir" == '${exec_prefix}/lib' ; then
   AC_SUBST(libdir)
 fi
 
+m4_include(config/ax_libssdeep.m4)
+AX_SSDEEP
+
 m4_include(config/ax_mysql_bin.m4)
 AX_MYSQL_BIN
 
