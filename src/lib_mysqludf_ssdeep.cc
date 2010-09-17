@@ -17,6 +17,10 @@
 #include "mysqludf.h"
 #include "fuzzy.h"
 
+#define strmov(a,b) stpcpy(a,b)
+#define bzero(a,b) memset(a,0,b)
+#define memcpy_fixed(a,b,c) memcpy(a,b,c)
+
 /* For Windows, define PACKAGE_STRING in the VS project */
 #ifndef __WIN__
 #include "config.h"
@@ -33,6 +37,10 @@ extern "C" {
 	DLLEXP my_bool ssdeep_fuzzy_hash_init(UDF_INIT *initid, UDF_ARGS *args, char *message);
 	DLLEXP void ssdeep_fuzzy_hash_deinit(UDF_INIT *initid);
 	DLLEXP char *ssdeep_fuzzy_hash(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error);
+	
+	DLLEXP my_bool ssdeep_fuzzy_compare_init(UDF_INIT *initid, UDF_ARGS *args, char *message);
+	DLLEXP long long ssdeep_fuzzy_compare(UDF_INIT *initid, UDF_ARGS *args, char *is_null, char *error);
+	DLLEXP void ssdeep_fuzzy_compare_deinit(UDF_INIT *initid);
 #ifdef	__cplusplus
 }
 #endif
@@ -91,9 +99,54 @@ char* ssdeep_fuzzy_hash(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned
 	
 	if(0 != fuzzy_hash_buf((unsigned char *) to_hash, to_hash_len, hash))
 	{
-		return false;
+		*is_null = 1;
+		return 0;
 	} else {
 		*length = strlen(hash);
 		return hash;
+	}
+}
+
+/*
+ * Fuzzy compare function
+ */
+my_bool ssdeep_fuzzy_compare_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
+{
+	if(args->arg_count != 2 || args->arg_type[0] != STRING_RESULT || args->arg_type[1] != STRING_RESULT) {
+		strcpy(message, "Wrong arguments to ssdeep_fuzzy_compare; Must be 2 string arguments.");
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+void ssdeep_fuzzy_compare_deinit(UDF_INIT *initid)
+{
+}
+
+long long ssdeep_fuzzy_compare(UDF_INIT *initid, UDF_ARGS *args, char *is_null, char *error)
+{
+	char *signature1 = args->args[0];
+	char *signature2 = args->args[1];
+	long long match = 0;
+	
+	if(!signature1 || !signature2)
+	{
+		*is_null = 1;
+		return 0;
+	}
+	
+	match = (long long) fuzzy_compare(signature1, signature2);
+	
+	if(match < 0 || match > 100)
+	{
+		*is_null = 1;
+		return 0;
+	}
+	else 
+	{
+		return match;
 	}
 }
