@@ -23,7 +23,7 @@ Move into the lib\_mysqludf\_ssdeep directory.
 
 1. `mkdir build`
 2. `./build.sh`
-3. lib\_mysqludf\_ssdeep will now be in the current directory.
+3. lib\_mysqludf\_ssdeep.so will now be in the current directory.
 
 
 Install
@@ -31,7 +31,7 @@ Install
 
 ### Ubuntu
 
-1. `sudo cp lib\_mysqludf\_ssdeep.so /usr/lib/mysql/plugin/`
+1. `sudo cp lib_mysqludf_ssdeep.so /usr/lib/mysql/plugin/`
 2. `mysql -u root -p < src/installdb.sql`
 3. Done.
 
@@ -40,6 +40,6 @@ Uninstall
 
 ### Ubuntu
 
-1. `sudo rm /usr/lib/mysql/plugin/lib\_mysqludf\_ssdeep.so`
+1. `sudo rm /usr/lib/mysql/plugin/lib_mysqludf_ssdeep.so`
 2. `mysql -u root -p < src/uninstalldb.sql`
 3. Done.
