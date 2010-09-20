@@ -29,6 +29,12 @@ Move into the lib\_mysqludf\_ssdeep directory.
 Install
 ------------------
 
+To find your MySQL plugin directory run the following query in MySQL:
+
+    show variables like 'plugin_dir';
+
+Mine is /usr/lib/mysql/plugin/ and I have used that in the examples below.
+
 ### Ubuntu
 
 1. `sudo cp lib_mysqludf_ssdeep.so /usr/lib/mysql/plugin/`
