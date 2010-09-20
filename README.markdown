@@ -33,7 +33,10 @@ To find your MySQL plugin directory run the following query in MySQL:
 
     show variables like 'plugin_dir';
 
-Mine is /usr/lib/mysql/plugin/ and I have used that in the examples below.
+Mine is /usr/lib/mysql/plugin/ and I have used that in the examples below. It can be changed in your /etc/mysql/my.cnf file with the line in the mysqld section:
+
+    [mysqld]
+    plugin_dir=/usr/lib/mysql/plugin
 
 ### Ubuntu
 
