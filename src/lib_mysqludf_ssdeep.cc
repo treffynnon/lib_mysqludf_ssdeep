@@ -38,6 +38,10 @@ extern "C" {
 	DLLEXP void ssdeep_fuzzy_hash_deinit(UDF_INIT *initid);
 	DLLEXP char *ssdeep_fuzzy_hash(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error);
 	
+	DLLEXP my_bool ssdeep_fuzzy_hash_filename_init(UDF_INIT *initid, UDF_ARGS *args, char *message);
+	DLLEXP void ssdeep_fuzzy_hash_filename_deinit(UDF_INIT *initid);
+	DLLEXP char *ssdeep_fuzzy_hash_filename(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error);
+	
 	DLLEXP my_bool ssdeep_fuzzy_compare_init(UDF_INIT *initid, UDF_ARGS *args, char *message);
 	DLLEXP long long ssdeep_fuzzy_compare(UDF_INIT *initid, UDF_ARGS *args, char *is_null, char *error);
 	DLLEXP void ssdeep_fuzzy_compare_deinit(UDF_INIT *initid);
@@ -77,33 +81,79 @@ my_bool ssdeep_fuzzy_hash_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 		strcpy(message, "Wrong arguments to ssdeep_fuzzy_hash; Must be 1 string argument.");
 		return 1;
 	}
+	initid->ptr = (char *) malloc(FUZZY_MAX_RESULT);
 	initid->max_length = FUZZY_MAX_RESULT;
 	return 0;
 }
 
 void ssdeep_fuzzy_hash_deinit(UDF_INIT *initid)
 {
+	if (initid->ptr != NULL)
+	{
+		free(initid->ptr);
+	}
 }
 
 char* ssdeep_fuzzy_hash(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned long* length, char *is_null, char *error)
 {
-	char *hash = (char *) malloc(FUZZY_MAX_RESULT);
 	char *to_hash = args->args[0];
 	int to_hash_len = args->lengths[0];
 	
-	if(!hash)
+	if(!initid->ptr)
 	{
 		*is_null = 1;
 		return 0;
 	}
 	
-	if(0 != fuzzy_hash_buf((unsigned char *) to_hash, to_hash_len, hash))
+	if(0 != fuzzy_hash_buf((unsigned char *) to_hash, to_hash_len, initid->ptr))
 	{
 		*is_null = 1;
 		return 0;
 	} else {
-		*length = strlen(hash);
-		return hash;
+		*length = strlen(initid->ptr);
+		return initid->ptr;
+	}
+}
+
+/*
+ * Fuzzy hash filename function
+ */
+my_bool ssdeep_fuzzy_hash_filename_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
+{
+	if(args->arg_count != 1 || args->arg_type[0] != STRING_RESULT) {
+		strcpy(message, "Wrong arguments to ssdeep_fuzzy_hash_filename; Must be 1 string argument.");
+		return 1;
+	}
+	initid->ptr = (char *) malloc(FUZZY_MAX_RESULT);
+	initid->max_length = FUZZY_MAX_RESULT;
+	return 0;
+}
+
+void ssdeep_fuzzy_hash_filename_deinit(UDF_INIT *initid)
+{
+	if (initid->ptr != NULL)
+	{
+		free(initid->ptr);
+	}
+}
+
+char* ssdeep_fuzzy_hash_filename(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned long* length, char *is_null, char *error)
+{
+	char *file_name = args->args[0];
+	
+	if(!initid->ptr)
+	{
+		*is_null = 1;
+		return 0;
+	}
+	
+	if(0 != fuzzy_hash_filename(file_name, initid->ptr))
+	{
+		*is_null = 1;
+		return 0;
+	} else {
+		*length = strlen(initid->ptr);
+		return initid->ptr;
 	}
 }
 
