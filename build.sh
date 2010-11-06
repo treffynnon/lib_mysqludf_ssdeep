@@ -7,7 +7,7 @@ mkdir $FULL_BUILD_PATH
 cp $SRC_DIR/* $FULL_BUILD_PATH -r
 cd $FULL_BUILD_PATH
 autoreconf
-./configure
+./configure --with-ssdeep
 make
 cd ../../
 cp $FULL_BUILD_PATH/.libs/lib_mysqludf_ssdeep.so ./lib_mysqludf_ssdeep.so
