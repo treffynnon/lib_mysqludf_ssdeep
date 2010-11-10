@@ -6,7 +6,7 @@ FULL_BUILD_PATH="$BUILD_DIR/$DATE_DIR"
 mkdir $FULL_BUILD_PATH
 cp $SRC_DIR/* $FULL_BUILD_PATH -r
 cd $FULL_BUILD_PATH
-autoreconf
+autoreconf --force --install --symlink
 ./configure --with-ssdeep
 make
 cd ../../
