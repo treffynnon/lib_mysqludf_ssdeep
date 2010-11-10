@@ -39,8 +39,7 @@ Move into the lib\_mysqludf\_ssdeep directory.
 
 1. Get [ssdeep from sourceforge](http://ssdeep.sourceforge.net/ "ssdeep on sourceforge")
 2. Install with `./configure` and then `make` and then `make install`
-3. Copy libraries to default path `sudo cp .libs/* /usr/lib/`
-4. Done
+3. Done
 
 #### Build It!
 
@@ -48,6 +47,26 @@ Move into the lib\_mysqludf\_ssdeep directory.
 2. `./build.sh`
 3. lib\_mysqludf\_ssdeep.so will now be in the current directory.
 
+
+### Redhat
+
+Move into the lib\_mysqludf\_ssdeep directory.
+
+#### MySQL Libraries
+
+	yum install gcc-c++ mysql-devel
+
+#### ssdeep Libraries
+
+1. Get [ssdeep from sourceforge](http://ssdeep.sourceforge.net/ "ssdeep on sourceforge")
+2. Install with `./configure` and then `make` and then `make install`
+3. Done
+
+#### Build It!
+
+1. `mkdir build`
+2. `./build.sh`
+3. lib\_mysqludf\_ssdeep.so will now be in the current directory.
 
 Install
 ------------------
