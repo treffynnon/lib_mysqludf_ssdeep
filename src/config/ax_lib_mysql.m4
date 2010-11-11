@@ -29,6 +29,7 @@
 #     AC_SUBST(MYSQL_LDFLAGS)
 #     AC_SUBST(MYSQL_VERSION)
 #     AC_SUBST(MYSQL_PLUGINDIR)
+#     AC_SUBST(MYSQL_PLUGINDIR_RPATH)
 #
 #   And sets:
 #
@@ -69,6 +70,7 @@ AC_DEFUN([AX_LIB_MYSQL],
     MYSQL_LDFLAGS=""
     MYSQL_VERSION=""
     MYSQL_PLUGINDIR=""
+    MYSQL_PLUGINDIR_RPATH=""
 
     dnl
     dnl Check MySQL libraries (libpq)
@@ -89,6 +91,7 @@ AC_DEFUN([AX_LIB_MYSQL],
             MYSQL_VERSION=`$MYSQL_CONFIG --version`
             if $MYSQL_CONFIG --plugindir > /dev/null; then
               MYSQL_PLUGINDIR=`$MYSQL_CONFIG --plugindir`
+              MYSQL_PLUGINDIR_RPATH="-rpath $MYSQL_PLUGINDIR"
             fi
 	    
             AC_DEFINE([HAVE_MYSQL], [1],
@@ -155,4 +158,5 @@ AC_DEFUN([AX_LIB_MYSQL],
     AC_SUBST([MYSQL_CFLAGS])
     AC_SUBST([MYSQL_LDFLAGS])
     AC_SUBST([MYSQL_PLUGINDIR])
+    AC_SUBST([MYSQL_PLUGINDIR_RPATH])
 ])

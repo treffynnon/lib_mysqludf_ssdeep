@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT(lib_mysqludf_ssdeep,0.0.1,simon@holywell.com.au)
+AC_INIT(lib_mysqludf_ssdeep,1.0.1,simon@holywell.com.au)
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_MACRO_DIR(config)
 AM_CONFIG_HEADER(config.h)
@@ -30,3 +30,4 @@ AC_C_CONST
 AC_TYPE_SIZE_T
 AC_CHECK_HEADERS(limits.h syslimits.h)
 AC_OUTPUT(Makefile)
+
