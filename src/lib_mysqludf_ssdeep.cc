@@ -52,6 +52,17 @@ extern "C" {
 
 
 /*
+ * Helper function to free the memory and destroy the pointers reference
+ */
+void ssdeep_kill_pointer(UDF_INIT *initid)
+{
+	if(initid->ptr != NULL) {
+		free(initid->ptr);
+		initid->ptr = NULL;
+	}
+}
+
+/*
  * Output the library version.
  * lib_mysqludf_ssdeep_info()
  */
@@ -88,10 +99,7 @@ my_bool ssdeep_fuzzy_hash_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 
 void ssdeep_fuzzy_hash_deinit(UDF_INIT *initid)
 {
-	if (initid->ptr != NULL)
-	{
-		free(initid->ptr);
-	}
+	ssdeep_kill_pointer(initid);
 }
 
 char* ssdeep_fuzzy_hash(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned long* length, char *is_null, char *error)
@@ -99,7 +107,7 @@ char* ssdeep_fuzzy_hash(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned
 	char *to_hash = args->args[0];
 	int to_hash_len = args->lengths[0];
 	
-	if(!initid->ptr)
+	if(NULL == initid->ptr)
 	{
 		*is_null = 1;
 		return 0;
@@ -131,17 +139,14 @@ my_bool ssdeep_fuzzy_hash_filename_init(UDF_INIT *initid, UDF_ARGS *args, char *
 
 void ssdeep_fuzzy_hash_filename_deinit(UDF_INIT *initid)
 {
-	if (initid->ptr != NULL)
-	{
-		free(initid->ptr);
-	}
+	ssdeep_kill_pointer(initid);
 }
 
 char* ssdeep_fuzzy_hash_filename(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned long* length, char *is_null, char *error)
 {
 	char *file_name = args->args[0];
 	
-	if(!initid->ptr)
+	if(NULL == initid->ptr)
 	{
 		*is_null = 1;
 		return 0;
