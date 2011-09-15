@@ -16,7 +16,7 @@ Calculates an ssdeep hash for the supplied string.
 
 Calculates an ssdeep hash for the supplied filename.
 
-### ssdeep_fuzzy_hash_compare(*STRING* signature1, *STRING* signature2)
+### ssdeep_fuzzy_compare(*STRING* signature1, *STRING* signature2)
 - **Param:** _signature1_ ssdeep hash string to compare.
 - **Param:** _signature2_ ssdeep hash string to compare.
 - **Return:** an _INTEGER_ (0 to 100) on success and _NULL_ otherwise.
