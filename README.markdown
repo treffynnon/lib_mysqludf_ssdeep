@@ -1,5 +1,7 @@
 lib\_mysqludf\_ssdeep
-==================
+=====================
+
+More comprehensive documentation can be found on the [lib\_mysqludf\_ssdeep readthedocs.org page](http://lib_mysqludf_ssdeep.readthedocs.org).
 
 Functions
 ------------------
