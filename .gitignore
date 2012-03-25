@@ -3,3 +3,4 @@
 /.project
 /build
 /lib_mysqludf_ssdeep.so
+/docs/_build
