@@ -56,7 +56,7 @@ Move into the lib\_mysqludf\_ssdeep directory.
 
 #### MySQL Libraries
 
-	yum install gcc-c++ mysql-devel
+	yum install gcc-c++ mysql-devel autoconf automake libtool
 
 #### ssdeep Libraries
 
