@@ -25,7 +25,7 @@ Redhat
 
 To install the GCC C++ compiler and the MySQL development headers install the following packages::
 
-    $ yum install gcc-c++ mysql-devel
+    $ yum install gcc-c++ mysql-devel autoconf automake libtool
 
 As there is no libfuzzy package on Redhat you need to build ssdeep from `its sources`_::
 
