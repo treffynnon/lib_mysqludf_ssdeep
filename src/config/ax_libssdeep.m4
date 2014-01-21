@@ -28,9 +28,17 @@ AC_DEFUN([AX_SSDEEP], [
     [  --enable-debug  Enable debugging],
     [ enabledebug=yes ]
   )
-  
+
+  AC_CANONICAL_HOST
+  LIB_EXTENSION="so"
+  case $host_os in
+    darwin*)
+      LIB_EXTENSION="dylib"
+      ;;
+  esac
+
   SSDEEP_LIB_NAME="fuzzy"
-  SSDEEP_LIB_FILENAME="lib$SSDEEP_LIB_NAME.so"
+  SSDEEP_LIB_FILENAME="lib$SSDEEP_LIB_NAME.$LIB_EXTENSION"
 
   if test -z "$withssdeep" -o "$withssdeep" = "yes"; then
     for i in /usr/lib /usr/local/lib; do
