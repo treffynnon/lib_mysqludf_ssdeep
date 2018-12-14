@@ -11,3 +11,9 @@ autoreconf --force --install --symlink
 make
 cd ../../
 cp $FULL_BUILD_PATH/.libs/lib_mysqludf_ssdeep.so ./lib_mysqludf_ssdeep.so
+if [ ! -z "$1" ] &&  [ "$1" = "debian" ]; then
+	cp $FULL_BUILD_PATH/.libs/lib_mysqludf_ssdeep.so ./lib_mysqludf_ssdeep.so
+	rm -rf build/
+else
+	cp $FULL_BUILD_PATH/.libs/lib_mysqludf_ssdeep.so ./lib_mysqludf_ssdeep.so
+fi
