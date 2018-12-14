@@ -1,0 +1,17 @@
+Source: lib-mysqludf-ssdeep
+Section: database
+Priority: extra
+Maintainer: root <int986@gmail.com>
+Build-Depends: debhelper (>=9), libfuzzy-dev, libmariadbclient-dev, libmariadbclient-dev-compat
+Standards-Version: 3.9.8
+Homepage: https://github.com/treffynnon/lib_mysqludf_ssdeep
+
+Package: lib-mysqludf-ssdeep
+Section: database
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: This mysql udf is for creating and comparing fuzzy hashes or context-triggered piecewise hashing 
+ Fuzzy hashing can match signatures which have sequences of identical bytes in the same order, although bytes
+ in between these sequences may be different in both content and length.

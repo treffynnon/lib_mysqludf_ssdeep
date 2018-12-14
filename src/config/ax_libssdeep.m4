@@ -41,7 +41,7 @@ AC_DEFUN([AX_SSDEEP], [
   SSDEEP_LIB_FILENAME="lib$SSDEEP_LIB_NAME.$LIB_EXTENSION"
 
   if test -z "$withssdeep" -o "$withssdeep" = "yes"; then
-    for i in /usr/lib /usr/local/lib; do
+    for i in /usr/lib /usr/lib/x86_64-linux-gnu /usr/local/lib; do
       if test -f "$i/$SSDEEP_LIB_FILENAME"; then
         SSDEEP_LIB_DIR="$i"
       fi

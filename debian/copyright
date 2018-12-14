@@ -1,0 +1,288 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lib-mysqludf-ssdeep
+Source: <url://example.com>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     .gitignore
+           README.markdown
+           build.sh
+           docs/Makefile
+           docs/conf.py
+           docs/functions.rst
+           docs/index.rst
+           docs/installation.rst
+           docs/make.bat
+           docs/quickstart.rst
+           lib_mysqludf_ssdeep.so
+           src/API
+           src/AUTHORS
+           src/Makefile.am
+           src/NEWS
+           src/README
+           src/config/ax_libssdeep.m4
+           src/config/ax_mysql_bin.m4
+           src/config/bootstrap
+           src/config/mkinstalldirs
+           src/configure.ac
+           src/installdb.sql
+           src/test/README
+           src/uninstalldb.sql
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     src/config/libtool.m4
+           src/config/ltoptions.m4
+           src/config/ltsugar.m4
+           src/config/lt~obsolete.m4
+Copyright: 1996-2008 Free Software Foundation, Inc.
+License:   PERMISSIVE
+ This file is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.
+
+Files:     src/mysqludf.cc
+           src/mysqludf.h
+Copyright: __NO_COPYRIGHT__ in: src/mysqludf.cc
+           __NO_COPYRIGHT__ in: src/mysqludf.h
+License:   LGPL-2.1+
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1 of the License, or (at
+ your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, write to the Free Software Foundation, Inc.,
+ 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ .
+ The FSF address in the above text is the old one.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ Version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+Files:     src/config/install-sh
+Copyright: 1991 the Massachusetts Institute of Technology
+License:   ISC
+ Permission to use, copy, modify, distribute, and sell this software and its
+ documentation for any purpose is hereby granted without fee, provided that
+ the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation, and that the name of M.I.T. not be used in advertising or
+ publicity pertaining to distribution of the software without specific,
+ written prior permission.  M.I.T. makes no representations about the
+ suitability of this software for any purpose.  It is provided "as is"
+ without express or implied warranty.
+ .
+ Calling this script install-sh is preferred over install.sh, to prevent
+ `make' implicit rules from creating a file called install from it
+ when there is no Makefile.
+ .
+ This script is compatible with the BSD install script, but was written
+ from scratch.  It can only install one file at a time, a restriction
+ shared with many OS's install programs.
+ .
+ set DOITPROG to echo to test this script
+ .
+ Don't use :- since 4.3BSD and earlier shells don't like it.
+
+Files:     src/lib_mysqludf_ssdeep.cc
+Copyright: 2010 Simon Holywell <simon@holywell.com.au>
+License:   GPL-2.0+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     src/config/ltversion.m4
+Copyright: 2004 Free Software Foundation, Inc.
+License:   PERMISSIVE
+ This file is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.
+ .
+ Generated from ltversion.in.
+
+Files:     src/config/ax_lib_mysql.m4
+Copyright: 2006 Mateusz Loskot <mateusz@loskot.net>
+License:   PERMISSIVE
+ Copying and distribution of this file, with or without
+ modification, are permitted in any medium without royalty provided
+ the copyright notice and this notice are preserved.
+
+Files:     src/INSTALL
+Copyright: 1994-2002 Free Software Foundation, Inc.
+License:   __UNKNOWN__
+ This file is free documentation; the Free Software Foundation gives
+ unlimited permission to copy, distribute and modify it.
+ .
+ Basic Installation
+
+Files:     src/config/ltmain.sh
+Copyright: 1996-2008 Free Software Foundation, Inc.
+License:   GPL-2.0+ with libtool exception
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ GNU Libtool is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ As a special exception to the GNU General Public License,
+ if you distribute this file as part of a program or library that
+ is built using GNU Libtool, you may include this file under the
+ same distribution terms that you use for the rest of that program.
+ .
+ GNU Libtool is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with GNU Libtool; see the file COPYING.  If not, a copy
+ can be downloaded from http://www.gnu.org/licenses/gpl.html,
+ or obtained by writing to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     src/config/config.guess
+Copyright: 1992-2002 Free Software Foundation, Inc.
+License:   GPL-2.0+ with autoconf exception
+ This file is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+ .
+ Originally written by Per Bothner <per@bothner.com>.
+ .
+ The FSF address in the above text is the old one.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     src/config/depcomp
+Copyright: 1999-2000 Free Software Foundation, Inc.
+License:   GPL-2.0+ with autoconf exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+ .
+ Originally written by Alexandre Oliva <oliva@dcc.unicamp.br>.
+ .
+ The FSF address in the above text is the old one.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     src/config/missing
+Copyright: 1996-2002 Free Software Foundation, Inc.
+License:   GPL-2.0+ with autoconf exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+ .
+ The FSF address in the above text is the old one.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     src/config/config.sub
+Copyright: 1992-2002 Free Software Foundation, Inc.
+License:   GPL-2.0+ with autoconf exception
+ This file is (in principle) common to ALL GNU software.
+ The presence of a machine in this file suggests that SOME GNU software
+ can handle that machine.  It does not imply ALL GNU software can.
+ .
+ This file is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+ .
+ The FSF address in the above text is the old one.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.

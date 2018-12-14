@@ -1,0 +1,5 @@
+lib-mysqludf-ssdeep (1.0-1) UNRELEASED; urgency=medium
+
+  * Initial release.
+
+ -- int986 <int986@gmail.com>  Fri, 14 Dec 2018 20:02:55 +0000
