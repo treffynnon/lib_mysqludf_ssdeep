@@ -1,1 +1,3 @@
-lib_mysqludf_ssdeep.so /usr/lib/x86_64-linux-gnu/mariadb18/plugin/lib_mysqludf_ssdeep.so
+./lib_mysqludf_ssdeep.so usr/lib/x86_64-linux-gnu/mariadb18/plugin/
+./src/installdb.sql usr/share/doc/lib-mysqludf-ssdeep/
+./src/uninstalldb.sql usr/share/doc/lib-mysqludf-ssdeep/

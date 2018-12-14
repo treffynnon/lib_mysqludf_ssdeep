@@ -10,9 +10,11 @@ clean:
 	rm -f lib_mysqludf_ssdeep.so
 	rm -rf debian/.debhelper/
 	rm -rf debian/lib-mysqludf-ssdeep/
+	dh $@
 
 build:
 	sh build.sh debian
+	dh $@
 
 %:
 	dh $@
